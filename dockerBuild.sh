@@ -1,0 +1,1 @@
+docker build --tag=employee-management:v1.1 .

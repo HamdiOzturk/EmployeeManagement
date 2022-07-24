@@ -1,0 +1,1 @@
+docker run -p8080:8080 employee-management:v1.1
