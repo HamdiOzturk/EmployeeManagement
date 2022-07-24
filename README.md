@@ -4,7 +4,7 @@ Spring Boot REST API Sample Project for Employee Management
 * Unit tests are written with MockMvc/Mockito
 <br>
 * Application is dockerized
-
+<br>
 <b>Actuator: </b> <a>http://localhost:8080/actuator/health</a> <br><br>
 
 <b>Swagger: </b> <a>http://localhost:8080/swagger-ui.html</a> <br><br>
