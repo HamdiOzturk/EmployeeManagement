@@ -6,8 +6,6 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
 import com.project.employeemanagement.dto.EmployeeDTO;
-import com.project.employeemanagement.exception.EmployeeNotFoundException;
-import com.project.employeemanagement.exception.RequiredInputException;
 
 /**
  * EmployeeService interface
@@ -30,15 +28,15 @@ public interface EmployeeService {
 	/**
 	 * finds an employee by id
 	 */
-	public EmployeeDTO findEmployeeById(Long id) throws EmployeeNotFoundException, RequiredInputException;
+	public EmployeeDTO findEmployeeById(Long id) ;
 	
 	/**
 	 * adds a new employee and generates a new id
 	 */
-	public EmployeeDTO addNewEmployee(EmployeeDTO employeeDTO) throws RequiredInputException;
+	public EmployeeDTO addNewEmployee(EmployeeDTO employeeDTO) ;
 
 	/**
 	 * updates and existing employee by its id given in the EmployeeDTO
 	 */
-	public EmployeeDTO updateEmployee(EmployeeDTO employeeDTO) throws EmployeeNotFoundException, RequiredInputException;
+	public EmployeeDTO updateEmployee(EmployeeDTO employeeDTO) ;
 }

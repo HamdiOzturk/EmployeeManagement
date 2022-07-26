@@ -21,7 +21,7 @@ public class ControllerExceptionHandler {
 	@ResponseStatus(HttpStatus.NOT_FOUND)
     public Map<String,String> handleDataNotFoundException(EmployeeNotFoundException ex){
         Map<String,String> errorMap = new HashMap<>();
-        errorMap.put("errorMessage: ", ex.getMessage());
+        errorMap.put("errorMessage", ex.getMessage());
         return errorMap;
     }
 	
@@ -29,7 +29,7 @@ public class ControllerExceptionHandler {
 	@ResponseStatus(HttpStatus.BAD_REQUEST)
     public Map<String,String> handleRequiredInputException(RequiredInputException ex){
         Map<String,String> errorMap = new HashMap<>();
-        errorMap.put("errorMessage: ", ex.getMessage());
+        errorMap.put("errorMessage", ex.getMessage());
         return errorMap;
     }
 }

@@ -10,9 +10,7 @@ import org.springframework.stereotype.Service;
 
 import com.project.employeemanagement.dto.EmployeeDTO;
 import com.project.employeemanagement.entity.Employee;
-import com.project.employeemanagement.exception.EmployeeNotFoundException;
 import com.project.employeemanagement.exception.ExceptionUtil;
-import com.project.employeemanagement.exception.RequiredInputException;
 import com.project.employeemanagement.mapper.EmployeeMapper;
 import com.project.employeemanagement.repository.EmployeeRepository;
 
@@ -38,7 +36,7 @@ public class EmployeeServiceImpl implements EmployeeService{
 	}
 
 	@Override
-	public EmployeeDTO findEmployeeById(Long id) throws EmployeeNotFoundException, RequiredInputException {
+	public EmployeeDTO findEmployeeById(Long id) {
 		if (id == null) {
 			ExceptionUtil.throwIdRequiredException();
 		}
@@ -53,7 +51,7 @@ public class EmployeeServiceImpl implements EmployeeService{
 	}
 
 	@Override
-	public EmployeeDTO addNewEmployee(EmployeeDTO employeeDTO) throws RequiredInputException{
+	public EmployeeDTO addNewEmployee(EmployeeDTO employeeDTO) {
 		if (employeeDTO == null) {
 			ExceptionUtil.throwEmployeeDTORequiredException();
 		}
@@ -63,7 +61,7 @@ public class EmployeeServiceImpl implements EmployeeService{
 	}
 
 	@Override
-	public EmployeeDTO updateEmployee(EmployeeDTO employeeDTO) throws EmployeeNotFoundException, RequiredInputException {
+	public EmployeeDTO updateEmployee(EmployeeDTO employeeDTO) {
 		if (employeeDTO == null) {
 			ExceptionUtil.throwEmployeeDTORequiredException();
 		}

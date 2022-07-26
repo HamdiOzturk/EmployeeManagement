@@ -14,8 +14,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.project.employeemanagement.dto.EmployeeDTO;
-import com.project.employeemanagement.exception.EmployeeNotFoundException;
-import com.project.employeemanagement.exception.RequiredInputException;
 import com.project.employeemanagement.service.EmployeeService;
 
 import io.swagger.annotations.ApiOperation;
@@ -47,19 +45,19 @@ public class EmployeeRestController {
 	
 	@GetMapping("/{id}")
 	@ApiOperation(value = "Retrieves a single employee record by its id")
-	public ResponseEntity<EmployeeDTO> findEmployeeById(@PathVariable Long id) throws EmployeeNotFoundException, RequiredInputException {
+	public ResponseEntity<EmployeeDTO> findEmployeeById(@PathVariable Long id) {
 		return ResponseEntity.ok().body(employeeService.findEmployeeById(id));
 	}
 	
 	@PostMapping("/add")
 	@ApiOperation(value = "Creates a new employee")
-	public ResponseEntity<EmployeeDTO> addNewEmployee(@RequestBody EmployeeDTO employeeDTO) throws RequiredInputException {
+	public ResponseEntity<EmployeeDTO> addNewEmployee(@RequestBody EmployeeDTO employeeDTO) {
 		return ResponseEntity.ok().body(employeeService.addNewEmployee(employeeDTO));
 	}
 	
 	@PostMapping("/update")
 	@ApiOperation(value = "Updates an existing employee record by its id")
-	public ResponseEntity<EmployeeDTO> updateEmployee(@RequestBody EmployeeDTO employeeDTO) throws EmployeeNotFoundException, RequiredInputException {
+	public ResponseEntity<EmployeeDTO> updateEmployee(@RequestBody EmployeeDTO employeeDTO) {
 		return ResponseEntity.ok().body(employeeService.updateEmployee(employeeDTO));
 	}
 }
